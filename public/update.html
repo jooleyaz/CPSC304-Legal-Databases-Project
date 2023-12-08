@@ -1,0 +1,94 @@
+<!--Referenced CPSC304 Javascript Node Project-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Update a Case</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+              document.body.insertAdjacentHTML("afterbegin", data);
+            });
+        });
+        </script>
+</head>
+<body>
+<div class="innerbody">
+    <h1>Update a Case</h1>
+
+    <h2>Judged Cases</h2>
+    <table id="judgedCasesTable" border="1">
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+            <th>Case ID</th>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>Judge License Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <h2>Judge</h2>
+    <table id="judgeTable" border="1">
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+            <th>License Number</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <h2>Update Title, Start Date, and/or Judge License Number in Judged Cases Table</h2>
+    <p>The values are case sensitive and if you enter in the wrong case, the update statement will not do anything.</p>
+    <form id="updateTitle">
+
+        Case Number: <input type="text" id="updateTitleCaseID" placeholder="Enter Case Number for tuple to update" maxlength="5" required> <br><br>
+        <!-- Old Title: <input type="text" id="updateOldTitle" placeholder="Enter Old Title" required> <br><br> -->
+        New Title: <input type="text" id="updateNewTitle" placeholder="Enter New Title" maxlength="100"> <br><br>
+
+        <button type="submit"> Update Title </button> <br>
+    </form>
+    <div id="updateTitleResultMsg"></div>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <form id="updateDate">
+
+        Case Number: <input type="text" id="updateDateCaseID" placeholder="Enter Case Number for tuple to update" maxlength="5" required> <br><br>
+        <!-- Old Start Date: <input type="date" id="updateOldStartDate" placeholder="Enter Old Start Date" required> <br><br> -->
+        New Start Date: <input type="date" id="updateNewStartDate" placeholder="Enter New Start Date"> <br><br>
+
+        <button type="submit"> Update Start Date </button> <br>
+    </form>
+    <div id="updateDateResultMsg"></div>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <form id="updateJudgeNum">
+
+        Case Number: <input type="text" id="updateJudgeNumCaseID" placeholder="Enter Case Number for tuple to update" maxlength="5" required> <br><br>
+        <!-- Old Judge License Number: <input type="text" id="updateOldJudgeLicenseNumber" placeholder="Enter Old Judge License Number" required> <br><br> -->
+        New Judge License Number: <input type="text" id="updateNewJudgeLicenseNumber" placeholder="Enter New Judge License Number" maxlength="5"> <br><br>
+
+        <button type="submit"> Update Judge License Number </button> <br>
+    </form>
+    <div id="updateJudgeNumResultMsg"></div>
+
+
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

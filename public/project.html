@@ -1,0 +1,89 @@
+<!--Referenced CPSC304 Javascript Node Project-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Project to View Attributes</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+              document.body.insertAdjacentHTML("afterbegin", data);
+            });
+        });
+        </script>
+</head>
+<body>
+<div class="innerbody">
+    <h1>View Attributes From Table</h1>
+
+    <h2>Tables to Project From</h2>
+    <table id="tableNameTable" border="1">
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+            <th>Table Names</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <button id="displayTableNames">Display Table Names</button>
+
+
+    <h2>Select Which Table to Project From</h2>
+    <p>The values are case sensitive and if you enter in the wrong case, the select statement will not do anything.</p>
+    <form id="selectProjectionTable">
+        Table Name: <input type="text" id="tableNameProject" placeholder="Enter Table Name" maxlength="50"> <br><br>
+
+        <button type="submit">select</button> <br>
+    </form>
+    <div id="inputTNResultMsg"></div>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <h2>Attributes of Table to Project From</h2>
+    <table id="attributeProjectionTable" border="1">
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+            <th>Attribute Names</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <h2>Select Which Attribute(s) to View</h2>
+    <p>Please add a comma and space between the attribute names!</p>
+    <p>The values are case sensitive and if you enter in the wrong case, the select statement will not do anything.</p>
+    <form id="selectProjectionAttribute">
+        Table Name: <input type="text" id="tableNameFinalProject" placeholder="Enter Table Name" maxlength="50"> <br><br>
+        Attribute Names: <input type="text" id="attributeNameProject" placeholder="Enter Attribute Name" maxlength="50"> <br><br>
+
+        <button type="submit">select</button> <br>
+    </form>
+    <div id="inputANResultMsg"></div>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <h2>View the Attributes</h2>
+    <table id="finalProjectionTable" border="1">
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

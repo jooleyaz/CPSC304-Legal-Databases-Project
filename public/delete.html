@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Evidence</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+              document.body.insertAdjacentHTML("afterbegin", data);
+            });
+        });
+        </script>
+</head>
+<body>
+<div class="innerbody">
+
+    <h1>Delete a Case</h1>
+
+    <h2>Judged Cases</h2>
+    <table id="judgedCasesTable" border="1">
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+            <th>Case ID</th>
+            <th>Title</th>
+            <th>Start Date</th>
+            <th>Judge License Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <button id="displayJCPreInsert">Display Judged Cases Table</button>
+
+
+    <form id="deleteJCTable">
+        Case ID: <input type="text" id="caseId" placeholder="Enter Case ID" maxlength="5"> <br><br>
+        <button type="submit"> Delete </button> <br>
+    </form>
+    <div id="insertResultMsg"></div>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

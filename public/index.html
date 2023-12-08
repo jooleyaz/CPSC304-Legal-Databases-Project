@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- This meta tag ensures that the website renders correctly across different device sizes, enhancing mobile responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to the external CSS stylesheet. Uncomment if you wish to customize or add styling. -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Criminal Law Database</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+              document.body.insertAdjacentHTML("afterbegin", data);
+            });
+        });
+        </script>
+</head>
+<body>
+
+
+<!-- ===================================================================================== -->
+<!-- Display the current status of the database connection.
+     !!HERE TO HELP U DEBUGGING, NOT REQUIRED IN YOUR OWN PROJECT!!
+     -->
+
+<div class="innerbody">
+    <h1>Database Connection Status:
+        <!-- An in-line placeholder to display connection status. -->
+        <span id="dbStatus"> </span>
+        <!-- A loading GIF, will be hided once get the status. -->
+        <img id="loadingGif" class="loading-gif" src="images/loading_100px.gif" alt="Loading...">
+    </h1>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <button id="displayTables">Click here to display or refresh all legal data!</button>
+
+    <br><br><hr><br> <!-- ========================================================================= -->
+
+    <div id="allInfo">
+
+        <div class="someInfo">
+
+            <h2>Judged Cases</h2>
+            <table id="judgedCasesTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Hearings</h2>
+            <table id="caseHearingsTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Judges</h2>
+            <table id="judgeTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Juries</h2>
+            <table id="caseJuryTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Closed Cases</h2>
+            <table id="closedCaseTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Testify For</h2>
+            <table id="testifyForTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Witnesses</h2>
+            <table id="witnessTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Evidence</h2>
+            <table id="evidenceBelongingToTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="someInfo">
+
+            <h2>Lawyers</h2>
+            <table id="lawyersTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Defend</h2>
+            <table id="defendTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Represent</h2>
+            <table id="representTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Defendants</h2>
+            <table id="defendantTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Prosecutors</h2>
+            <table id="prosecutorTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Work On</h2>
+            <table id="workOnTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Legal Company Phones</h2>
+            <table id="lawyerCompanyPhoneTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <h2>Legal Company Addresses</h2>
+            <table id="lawyerCompanyAddressTable">
+                <thead>
+                <tr>
+                    <th>Case Number</th> <!-- casenum -->
+                    <th>Title</th> <!-- title -->
+                    <th>Start Date</th> <!-- start_date -->
+                    <th>Judge License Number</th> <!-- licensenum -->
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+<!--
+    <table id="projectionTable" border="1">
+        <thead>
+        <tr>
+            &lt;!&ndash;Table head, need to be adjusted accordingly to align with your own.&ndash;&gt;
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>-->
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+<!-- ===================================================================================== -->
+
+<!-- External JavaScript file that contains the functionality/logic for the operations above. -->
+<script src="scripts.js"></script>
+</div>
+</body>
+</html>

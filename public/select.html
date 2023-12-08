@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Filter Closed Cases</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+              document.body.insertAdjacentHTML("afterbegin", data);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="innerbody">
+    <h1>Filter Closed Cases</h1>
+
+    <h2>Closed Cases</h2>
+    <table id="closedCaseTable" border="1">
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+            <th>Case Number</th>
+            <th>Verdict</th>
+            <th>End Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> <br>
+
+    <h2>Filter closed cases:</h2>
+    <p>Please leave the boxes blank and do not select a checkbox if you would not like that value included.
+    Do not select multiple check boxes per attribute, please! :3</p>
+
+    <h3>Case number</h3>
+    <input id="caseNum" placeholder="Case number = ?">
+    Include in filter search, mandatory (and): <input type="checkbox" id="andCaseNum" value="1">
+    Include in filter search, optionally (or): <input type="checkbox" id="orCaseNum" value="2">
+
+    <h3>Verdict</h3>
+    <input id="verdict" placeholder="Verdict = ?">
+    Include in filter search, mandatory (and): <input type="checkbox" id="andVerdict" value="1">
+    Include in filter search, optionally (or): <input type="checkbox" id="orVerdict" value="2">
+
+<!--    <h3>End date</h3>-->
+<!--    <input id="date" placeholder="End date = ?" type="datetime-local">-->
+<!--    Include in filter search, mandatory (and): <input type="checkbox" id="andDate" value="1">-->
+<!--    Include in filter search, optionally (or): <input type="checkbox" id="orDate" value="2">-->
+
+
+    <button id="filterButton">Submit</button>
+
+    <div id="filterMsg"></div>
+
+    <h2>Filtered closed cases:</h2>
+    <table id="closedCaseFiltered" border="1">
+        <thead>
+        <tr>
+            <!--Table head, need to be adjusted accordingly to align with your own.-->
+            <th>Case Number</th>
+            <th>Verdict</th>
+            <th>End Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table> <br>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

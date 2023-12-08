@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>All Searches</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+              document.body.insertAdjacentHTML("afterbegin", data);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="innerbody">
+    <h1>Ask questions!</h1>
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <!---->
+    <h2>Count hearings</h2>
+    <p>Count how many hearings there are per case!</p>
+    <button id="countHearings">Count</button>
+    <div id="resultMsg"></div>
+    <h2>Hearings per case</h2>
+    <table id="hearingsPerCaseTable" border="1">
+        <thead>
+        <tr>
+            <th>Case Number</th>
+            <th>Number of hearings</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!---->
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <!---->
+    <h2>Find juries</h2>
+    <p>Type a number to find amount of juries that have strictly greater than a certain number of people!</p>
+    <input type="text" id="insertId" placeholder="Enter number" required> <br>
+    <button id="groupByHavingButton"> Submit </button> <br>
+    <div id="groupByHavingResult"></div> <br>
+    <table id="juriesWithMoreThanTable" border="1">
+        <thead>
+        <tr>
+            <th>Number of jurors</th>
+            <th>Amount of juries</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!---->
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <!---->
+    <h2>For each case, find the date of the hearing earlier than or equal to the date of the first ever hearing</h2>
+    <button id="nestedButton"> Submit </button> <br>
+    <div id="nestedResult"></div> <br>
+    <table id="nestedHearingsTable" border="1">
+        <thead>
+        <tr>
+            <th>Case Number</th>
+            <th>First case hearing earlier than most recent hearing of all cases</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!---->
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+    <!---->
+    <h2>Find all the judges who have overseen all cases</h2>
+    <button id="judgeDivisionButton"> Search </button> <br>
+    <div id="divisionResult"></div> <br>
+    <table id="judgeDivisionTable" border="1">
+        <thead>
+        <tr>
+            <th>Judge License Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <!---->
+
+    <br><hr><br> <!-- ========================================================================= -->
+
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
